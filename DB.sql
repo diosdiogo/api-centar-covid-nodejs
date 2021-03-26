@@ -28,7 +28,7 @@ CREATE TABLE `paciente` (
   `idade` int(11) NOT NULL,
   `teste` varchar(15) NOT NULL DEFAULT 'Negativo',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1,'Diogo Cesar',33,'Negativo');
+INSERT INTO `paciente` VALUES (1,'Diogo Cesar',33,'Negativo'),(10,'Cesar',20,'Positivo'),(11,'João',88,'Positivo');
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-26  8:10:46
+-- Dump completed on 2021-03-26 17:17:19

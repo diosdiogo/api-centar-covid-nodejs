@@ -35,7 +35,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
 
     mysql.getConnection((error, conn) => {
-
+        console.log(req.body.nome)
         if(error){return res.status(500).send({error: error})}
         conn.query(
             'INSERT INTO paciente (nome, idade, teste) VALUES (?,?,?)',
