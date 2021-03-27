@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require("body-parser")
+var cors = require('cors');
 
 const routerPaciente = require('./routers/pacientes');
 
@@ -10,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.use('/pacientes', routerPaciente);
+app.use('/pacientes', cors(),  routerPaciente);
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+var cors = require('cors');
 const mysql = require('../mysql').pool;
 
 //retorna todos
-router.get('/', (req, res, next) => {
+router.get('/', cors(), (req, res, next) => {
    
     mysql.getConnection((error, conn) => {
 
@@ -32,7 +33,7 @@ router.get('/', (req, res, next) => {
 
 
 //insere
-router.post('/', (req, res, next) => {
+router.post('/',  cors(), (req, res, next) => {
 
     mysql.getConnection((error, conn) => {
         console.log(req.body.nome)
@@ -60,7 +61,7 @@ router.post('/', (req, res, next) => {
 });
 
 //retorna um 
-router.get('/:id_paciente', (req, res, next) => {
+router.get('/:id_paciente',  cors(), (req, res, next) => {
     
     if(req.params.id_paciente == 0){
         res.status(200).send({
@@ -94,7 +95,7 @@ router.get('/:id_paciente', (req, res, next) => {
     }
     
 });
-router.patch('/', (req, res, next) => {
+router.patch('/',  cors(), (req, res, next) => {
     if(req.params.id_paciente == 0){
         res.status(200).send({
             error: 'ID invalido',
@@ -126,7 +127,7 @@ router.patch('/', (req, res, next) => {
     }
 });
 
-router.delete('/:id_paciente', (req, res, next) => {
+router.delete('/:id_paciente',  cors(), (req, res, next) => {
 
     if(req.params.id_paciente == 0){
         res.status(200).send({
